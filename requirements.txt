@@ -1,0 +1,20 @@
+#List of Packages needed
+#  Data Science Packages
+
+jupyter
+pandas
+polars
+numpy
+scikit-learn
+matplotlib
+seaborn
+
+#  Others - for the Github Workflows
+black
+click 
+pylint
+pytest
+#rust based linter
+ruff==0.0.284
+#SQL formatter
+prettytable
