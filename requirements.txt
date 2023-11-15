@@ -18,3 +18,7 @@ pytest
 ruff==0.0.284
 #SQL formatter
 prettytable
+pyspark
+spark
+delta-spark
+delta
