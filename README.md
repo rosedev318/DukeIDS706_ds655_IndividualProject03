@@ -6,6 +6,52 @@
 [![Lint](https://github.com/nogibjj/DukeIDS706_ds655_IndividualProject03/actions/workflows/03_Lint.yml/badge.svg)](https://github.com/nogibjj/DukeIDS706_ds655_IndividualProject03/actions/workflows/03_Lint.yml)
 [![Test](https://github.com/nogibjj/DukeIDS706_ds655_IndividualProject03/actions/workflows/04_Test.yml/badge.svg)](https://github.com/nogibjj/DukeIDS706_ds655_IndividualProject03/actions/workflows/04_Test.yml)
 
+# Components:
+
+## 1 - A well-documented Databricks notebook that performs ETL (Extract, Transform, Load) operations, checked into the repository
+
+Azure Workspace [Link](https://adb-2656694793182894.14.azuredatabricks.net/browse/folders/2685268812376476?o=2656694793182894)
+
+
+## 2 - Usage of Delta Lake for data storage
+
+File Name - `02_Delta_Lake_For_Storage.py` - an Azure Databricks Notebook that creates a Delta Table in the Delta Lake using *Spark*
+
+ * Read the iris dataset from the Data Folder
+ * Create a pandas DataFrame `data`
+ * Convert the Pandas DataFrame to a Spark Dataframe `spark_df` (because only spark dataframes can be converted to a delta format)
+ * Save the Spark DataFrame as a Delta-Table `delta_table_iris` (Overwrite mode is on so that if the table already exists, it will be re-written instead of giving errors)
+ * Error handling at every step to highlight errors
+
+## 3 - Usage of Spark SQL for data transformations
+
+File Name - `03_Spark_SQL_For_DataTransformation.py` - an Azure Databricks Notebook that queries the Iris Delta Table created above using *Spark SQL*
+
+ * Create a Spark Session using PySpark.SQL
+ * Query the `delta_table_iris` table created in the above step (#2)
+ * Using the *GROUP BY* command in SQL to transform the data and make it readable
+ * Writing this data into a new delta table `iris_transformed` for future steps (visualization)
+ * Error handling at every step
+
+## 4 - Proper error handling and data validation
+
+## 5 - Visualization of the transformed data
+
+## 6 - An automated trigger to initiate the pipeline
+
+## 7 - Video Demo - [Link]()
+
+
+
+
+
+
+
+
+
+
+
+
 Files in this repository include:
 
 
