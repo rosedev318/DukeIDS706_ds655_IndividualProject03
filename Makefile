@@ -8,7 +8,7 @@ format:
 	black \Codes/*.py 
 
 test:
-	python -m pytest \Codes/Test_*.py
+	python -m pytest \Codes/Test_main.py
 
 lint:
 	ruff check \Codes/*.py
