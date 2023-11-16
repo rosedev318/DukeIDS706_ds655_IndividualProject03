@@ -22,6 +22,8 @@ File Name - `02_Delta_Lake_For_Storage.py` - an Azure Databricks Notebook that c
  * Convert the Pandas DataFrame to a Spark Dataframe `spark_df` (because only spark dataframes can be converted to a delta format)
  * Save the Spark DataFrame as a Delta-Table `delta_table_iris` (Overwrite mode is on so that if the table already exists, it will be re-written instead of giving errors)
  * Error handling at every step to highlight errors
+![Delta Lake for Storage](https://github.com/nogibjj/DukeIDS706_ds655_IndividualProject03/blob/ac0b5d7704c4c6a488b37883534836f9fd4630c2/Resources/1116_Delta_Lake_For_Storage%20-%20Databricks.png)
+
 
 ## 3 - Usage of Spark SQL for data transformations
 
@@ -32,10 +34,22 @@ File Name - `03_Spark_SQL_For_DataTransformation.py` - an Azure Databricks Noteb
  * Using the *GROUP BY* command in SQL to transform the data and make it readable
  * Writing this data into a new delta table `iris_transformed` for future steps (visualization)
  * Error handling at every step
+![Usage of Spark SQL](https://github.com/nogibjj/DukeIDS706_ds655_IndividualProject03/blob/ac0b5d7704c4c6a488b37883534836f9fd4630c2/Resources/1116_Spark_SQL_for_DataTransformations%20-%20Databricks.png)
+
 
 ## 4 - Proper error handling and data validation
+Error handling and Data Validation is performed individually in every code and notebook. Errors are published wherever possible, and empty dataframes are flagged as well.
 
 ## 5 - Visualization of the transformed data
+
+File Name - `04_Visualization_of_Transformed_Data.py` - an Azure Databricks Notebook that creates a Visualization based on the *transformed* delta table created in Step 03
+
+ * Query the `iris_transformed` Delta Table usign Spark SQL
+ * Generate a chart of the data using Matplotlib
+ * Save the chart as `avg_sepal_length_by_species.png` in the Azure workspace
+ * Location: `/dbfs/tmp/avg_sepal_length_by_species.png`
+ * The image cannot be pushed into the Github Repository directly from a Databricks notebook, because it requires git commands and authentication information
+![Visualization](https://github.com/nogibjj/DukeIDS706_ds655_IndividualProject03/blob/ac0b5d7704c4c6a488b37883534836f9fd4630c2/Resources/1116_Visualization_of_Transformed_Data%20-%20Databricks.png)
 
 ## 6 - An automated trigger to initiate the pipeline
 
