@@ -12,7 +12,7 @@ from pyspark.sql.types import DoubleType, IntegerType, StringType, StructType, S
 
 # Define variables used in the code below
 file_path = "/databricks-datasets/songs/data-001/"
-table_name = "songs_full"
+table_name = "songs"
 checkpoint_path = "/tmp/pipeline_get_started/_checkpoint/song_data"
 
 schema = StructType(
@@ -56,7 +56,7 @@ schema = StructType(
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC SELECT * FROM songs_full
+# MAGIC SELECT * FROM songs
 
 # COMMAND ----------
 
@@ -87,5 +87,26 @@ schema = StructType(
 # MAGIC   year,
 # MAGIC   current_timestamp()
 # MAGIC FROM
-# MAGIC   songs_full
+# MAGIC   songs
 # MAGIC
+
+# COMMAND ----------
+
+from pyspark.sql import SparkSession
+from delta.tables import DeltaTable
+import pandas as pd
+
+def load_into_delta_lake(data, path):
+    # Convert pandas dataframe to spark dataframe
+    spark = SparkSession.builder.getOrCreate()
+    spark_df = spark.createDataFrame(data)
+
+    # Write the DataFrame to a Delta Lake table
+    spark_df.write.format("delta").saveAsTable(path)
+# Use the function
+data = pd.read_csv("https://raw.githubusercontent.com/nogibjj/DukeIDS706_ds655_IndividualProject03/main/Data/Iris_Data.csv")
+load_into_delta_lake(data, 'delta_table')
+
+# COMMAND ----------
+
+
