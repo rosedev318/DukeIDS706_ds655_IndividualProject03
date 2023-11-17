@@ -12,6 +12,13 @@
 
 Azure Workspace [Link](https://adb-2656694793182894.14.azuredatabricks.net/browse/folders/2685268812376476?o=2656694793182894)
 
+File Name - `01_ETL_Operations` - an Azure Databricks Notebook that performs Extract, Transform, and Load operations using Pyspark created from the Azure workspace
+ * Creates a Spark Session `spark`
+ * *Extract* - Extracts data from `Iris_data.csv` in the Data Folder, and stores it in a Pandas Dataframe `df`
+ * *Transform* - Creates a Spark DataFrame called `spark_df` from the pandas `df` dataframe, drops NA values from the dataset, and converts numeric columns to Integer
+ * *Load* - Saves the transformed spark Dataframe as a Delta table called `Delta_Table`
+
+![ETL Operations](https://github.com/nogibjj/DukeIDS706_ds655_IndividualProject03/blob/4655695b1e24279b466294c792cd751fac3e3811/Resources/1116_ETL_Operations%20-%20Databricks.png)
 
 ## 2 - Usage of Delta Lake for data storage
 
