@@ -8,9 +8,9 @@ format:
 	black \Codes/*.py 
 
 test:
-	python -m pytest \Codes/Test_main.py
+	python -m pytest \Codes/Test_*.py
 
 lint:
-	ruff check \Codes/*.py
+	ruff check \Codes/main.py
 
 all: install format lint test
