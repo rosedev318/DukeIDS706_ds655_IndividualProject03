@@ -60,6 +60,14 @@ File Name - `04_Visualization_of_Transformed_Data.py` - an Azure Databricks Note
 
 ## 6 - An automated trigger to initiate the pipeline
 
+The pipeline has been set up to run automatically on the 1st day of every month at 00:00:00.
+
+#### Workflow Pipeline : The workflow first creates the table, then Transforms and Loads the Data, and then creates a Visualization for it using codes from steps 2, 3, and 5 from above 
+![Workflow Chart](https://github.com/nogibjj/DukeIDS706_ds655_IndividualProject03/blob/e1d428241365f7c7e46e128508187be075389625/Resources/1116_Automated%20Workflow_Chart%20-%20Databricks.png)
+
+#### Workflow Successful Run
+![Workflow Run](https://github.com/nogibjj/DukeIDS706_ds655_IndividualProject03/blob/e1d428241365f7c7e46e128508187be075389625/Resources/1116_Automated%20Workflow%20-%20Databricks.png)
+
 ## 7 - Video Demo - [Link]()
 
 
