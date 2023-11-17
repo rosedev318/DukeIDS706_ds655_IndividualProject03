@@ -11,6 +11,6 @@ test:
 	python -m pytest \Codes/Test_*.py
 
 lint:
-	ruff check \Codes/main.py
+	pylint \Codes/main.py
 
 all: install format lint test
