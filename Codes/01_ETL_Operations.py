@@ -21,11 +21,15 @@ try:
     spark_df = spark_df.dropna()
     # Convert the 'age' column to integer type
     spark_df = spark_df.withColumn("sepal_length", col("sepal_length").cast("integer"))
+    spark_df = spark_df.withColumn("sepal_width", col("sepal_width").cast("integer"))
+    spark_df = spark_df.withColumn("petal_length", col("petal_length").cast("integer"))
+    spark_df = spark_df.withColumn("petal_width", col("petal_width").cast("integer"))
     print("Data Transformation: Done")
 
     # LOAD
+    spark.sql("DROP TABLE IF EXISTS Delta_Table")
     # Write data into a Delta table
-    spark_df.write.format("delta").mode("overwrite").saveAsTable("Delta_Table")
+    spark_df.write.format("delta").saveAsTable("Delta_Table", mode = 'overwrite')
     print("Data Loading: Done")
 
 except AnalysisException as e:
